@@ -1,7 +1,9 @@
 <?php
 require 'common/function.php';
-#======= IPC（Inter-Process Communication，进程间通讯） =======#
 
+
+
+#======= IPC（Inter-Process Communication，进程间通讯） =======#
 require 'shmop/example.php';
 # [ftok]
 
