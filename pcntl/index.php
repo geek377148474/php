@@ -1,24 +1,23 @@
 <?php
+$dir = 'pcntl';
 
-
-#============================== tick ===========================#
-require 'pcntl/tick.php';
-
-
+if (strpos(__DIR__, $dir) !== false) {
+    $dir = '';
+} else {
+    $dir .= DIRECTORY_SEPARATOR;
+}
 
 #============================== pcntl ==========================#
-require 'pcntl/pcntl.php';
+
+// require 'pcntl/pcntl.php';
 # [php_sapi_name] 检测PHP运行环境 相当于 PHP_SAPI
 
 
 # [pcntl_signal]
 
 
-# [declare]
-
-
 # [pcntl_fork] 创建子进程
-
+require $dir . 'pcntl_fork.php';
 
 # [pcntl_wait] 父进程等待子进程退出
 
@@ -27,3 +26,5 @@ require 'pcntl/pcntl.php';
 
 
 # [getmypid] 获取进程号
+
+# [declare]
