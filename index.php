@@ -91,12 +91,19 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
  * php适配器模式
  * 把实现了不同接口的对象通过适配器的方式组合起来放在一个新的环境
  */
-require 'Adapter.php';
+// require 'Adapter.php';
 
 ## - [装饰器模式]
 /*
  * 对现有的对象增加功能
  * 和适配器的区别：适配器是连接两个接口，装饰器是对现有的对象包装
- * /
+ */
+// require 'Decorator.php';
 
-
+## - [组合模式]
+/*
+* php组合（部分整体）模式
+* 定义：将对象以树形结构组织起来，以达成“部分－整体”的层次结构，使得客户端对单个对象和组合对象的使用具有一致性
+* 我的理解：把对象构建成树形结构
+*/
+require 'Composite.php';
