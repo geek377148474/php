@@ -100,11 +100,11 @@ class Folder implements CompositeInterface
     {
         foreach ($this->_composite as $v) {
             if ($v instanceof Folder) {
-                echo '---' . $v->name . '---' . PHP_EOL;
+                echo 'dir:-----' . $v->name . '-----' . PHP_EOL;
                 $v->printComposite();
                 continue;
             }
-            echo $v->name;
+            echo 'file:--'.$v->name.'--'.PHP_EOL;
         }
     }
 
