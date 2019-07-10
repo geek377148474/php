@@ -29,7 +29,7 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
  * 工厂方法模式利用子类创造对象,抽象工厂模式利用接口的实现创造对象
  * 工厂方法模式可以退化为简单工厂模式(非23中GOF)
  */
-// require 'Factory.php';
+require 'Factory.php';
 
 
 ## - [抽象工厂模式]
@@ -47,15 +47,22 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
 /**
  * php原型模式
  * 用于创建对象成本过高时
+ * 通过clone复制对象
  */
 // require 'Prototype.php';
 
 
-## [建造者模式]
+## - [建造者模式]
 /**
  * php建造者模式
  * 简单对象构建复杂对象
  * 基本组件不变,但是组件之间的组合方式善变
+ * 
+ * GOF 给建造者模式的定义为：
+ * 将一个复杂对象的构建与它的表示分离
+ * 使得同样的构建过程可以创建不同的表示
+ * 简单来说
+ * 将建造复杂对象的过程和组成对象的部件解耦
  */
 // require 'Builder.php';
 
@@ -209,7 +216,7 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
  * 
  * 子类们拥有一致的算法
  */
-// require 'template.php';
+// require 'Template.php';
 
 
 ## - [策略模式]
@@ -235,7 +242,7 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
 ## - [观察者模式]
 /**
  * php观察者模式
- * 观察者观察被观察者，被观察者通知观察者
+ * 观察者观察被观察者，被观察者通知观察者（监听者）
  */
 // require 'Observer.php';
 
@@ -316,4 +323,4 @@ if (dirname($_SERVER['SCRIPT_FILENAME']) != 'DesignPatterns') {
  * 理解：当程序运行过程中出现操作空对象时，程序依然能够通过操作提供的空对象继续执行
  * 使用场景：谨慎使用吧
  */
-require 'NullObject.php';
+// require 'NullObject.php';

@@ -1,6 +1,48 @@
 <?php
 
 /**
+ * 备忘录实体
+ */
+class Memento
+{
+    /**
+     * 备忘录栈 先进后出
+     *
+     * @var [type]
+     */
+    private $_mementoList = [];
+
+    /**
+     * 存储
+     *
+     * @return void
+     */
+    public function add($editor)
+    {
+        array_push($this->_mementoList, $editor);
+    }
+
+    /**
+     * 返回编辑器实例上个状态
+     *
+     * @return void
+     */
+    public function undo()
+    {
+        return array_pop($this->_mementoList);
+    }
+
+    /**
+     * 返回编辑器实例开始状态
+     *
+     * @return void
+     */
+    public function redo()
+    {
+        return array_shift($this->_mementoList);
+    }
+}
+/**
  * 编辑器实体
  */
 class Editor
@@ -91,48 +133,7 @@ class Editor
         $this->_content = $redo->_content;
     }
 }
-/**
- * 备忘录实体
- */
-class Memento
-{
-    /**
-     * 备忘录栈 先进后出
-     *
-     * @var [type]
-     */
-    private $_mementoList = [];
 
-    /**
-     * 存储
-     *
-     * @return void
-     */
-    public function add($editor)
-    {
-        array_push($this->_mementoList, $editor);
-    }
-
-    /**
-     * 返回编辑器实例上个状态
-     *
-     * @return void
-     */
-    public function undo()
-    {
-        return array_pop($this->_mementoList);
-    }
-
-    /**
-     * 返回编辑器实例开始状态
-     *
-     * @return void
-     */
-    public function redo()
-    {
-        return array_shift($this->_mementoList);
-    }
-}
 
 try {
     // 初始化一个编辑器并新建一个空文件

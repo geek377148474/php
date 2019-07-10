@@ -12,7 +12,7 @@ class Zoo implements Factory
         echo '初始化了动物园，可根据需求生产Chicken and Pig' . PHP_EOL;
     }
 
-    public static function produce($type = "")
+    public static function produce($type = ""): Animal
     {
         switch ($type) {
             case 'chicken':

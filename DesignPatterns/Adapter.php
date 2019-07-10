@@ -1,28 +1,7 @@
 <?php
-
-class AudioPlayer
-{
-    public function play($file = '', $type = '')
-    {
-        switch ($type) {
-            case "mp3":
-                echo "playing file：{$file}.mp3";
-                break;
-            case "mp4":
-                $adapter = new Adapter($type);
-                $adapter->play($file);
-                break;
-            case "wmp":
-                $adapter = new Adapter($type);
-                $adapter->play($file);
-                break;
-            default:
-                throw new Exception("$type is not supported", 400);
-                break;
-        }
-    }
-}
-
+/**
+ * 适配器类
+ */
 class Adapter
 {
     public $_type;
@@ -58,7 +37,31 @@ class Adapter
         }
     }
 }
-
+/**
+ * 播放器
+ */
+class AudioPlayer
+{
+    public function play($file = '', $type = '')
+    {
+        switch ($type) {
+            case "mp3":
+                echo "playing file：{$file}.mp3";
+                break;
+            case "mp4":
+                $adapter = new Adapter($type);
+                $adapter->play($file);
+                break;
+            case "wmp":
+                $adapter = new Adapter($type);
+                $adapter->play($file);
+                break;
+            default:
+                throw new Exception("$type is not supported", 400);
+                break;
+        }
+    }
+}
 /**
  * 高级媒体接口
  */
