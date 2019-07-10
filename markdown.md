@@ -19,7 +19,7 @@ echo phpinfo();
 - [ ] 待办事项二
 
 4. 流程图
-``` 
+```mermaid
 graph TD
     A[Christmas] -->B(Go Shopping)
     B --> C{Let me think}
