@@ -44,3 +44,10 @@ echo phpinfo();
 |Computer| 1600 USD |  5  |
 |Phone| 12 USD |  12  |
 |Pipe| 1 USD |  234  |
+
+#### 流程图
+```
+graph TD
+A[11] -->B(22)
+B --> C{33}
+```
