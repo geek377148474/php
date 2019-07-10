@@ -6,7 +6,15 @@
 ##### 五号标题
 ###### 六号标题
 
-==强调==
+水平分界线
+
+---
+
+~~中划线~~
+
+
+[显示文本](链接地址)
+
 
 2. 代码区
 ```php
@@ -29,4 +37,16 @@ graph TD
     A[Christmas] -->B(Go Shopping)
     B --> C{Let me think}
     C -->|One| D[L]
+```
+```flow
+st=>start: Start:>https://www.zybuluo.com
+io=>inputoutput: verification
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+sub=>subroutine: Your Subroutine
+e=>end
+
+st->io->op->cond
+cond(yes)->e
+cond(no)->sub->io
 ```
