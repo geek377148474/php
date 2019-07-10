@@ -6,6 +6,10 @@
 ##### 五号标题
 ###### 六号标题
 
+*斜体*
+
+**加粗**
+
 水平分界线
 
 ---
@@ -16,7 +20,8 @@
 [显示文本](链接地址)
 
 
-2. 代码区
+
+2. 代码
 ```php
 echo '这是代码区';
 echo phpinfo();
@@ -31,22 +36,11 @@ echo phpinfo();
 - [ ] 待办事项一
 - [ ] 待办事项二
 
-4. 流程图
-```mermaid
-graph TD
-    A[Christmas] -->B(Go Shopping)
-    B --> C{Let me think}
-    C -->|One| D[L]
-```
-```flow
-st=>start: Start:>https://www.zybuluo.com
-io=>inputoutput: verification
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-sub=>subroutine: Your Subroutine
-e=>end
 
-st->io->op->cond
-cond(yes)->e
-cond(no)->sub->io
-```
+4.这是表格
+
+| Item   | Value    | Qty |
+| :---   | ---:      | :--: |
+|Computer| 1600 USD |  5  |
+|Phone| 12 USD |  12  |
+|Pipe| 1 USD |  234  |
