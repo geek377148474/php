@@ -47,6 +47,8 @@ class StaticFunctions
 {
     private $_name = 'STATIC';
 
+    private $_origin = 'STATIC';
+
     private $_extend = [];
 
     /**
@@ -111,3 +113,5 @@ $static->extend(function($type = ''){
     };
 }, $h);
 $static->test();
+echo '<br>';
+echo $static->origin;

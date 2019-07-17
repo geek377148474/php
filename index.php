@@ -1,8 +1,20 @@
 <?php
 require 'common/function.php';
-$dir = 'trait';// 工作目录
-if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
-    chdir($dir);
-}
 
-require 'example.php';
+# [usage 1]
+// require 'closure/example.php';
+
+# [usage 2]
+// require 'closure/example2.php';
+
+# [usage 3]
+// require 'closure/example3.php';
+
+# [usage 4]
+// require 'closure/example4.php';
+
+# [usage 5]
+// require 'closure/example5.php';
+
+# [usage 6]
+require 'closure/example6.php';
