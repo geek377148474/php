@@ -1,6 +1,6 @@
 <?php
 require 'common/function.php';
-$dir = 'function';// 工作目录
+$dir = 'trait';// 工作目录
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
 }
