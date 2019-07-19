@@ -38,8 +38,72 @@ class Container
             return $this->instances[$abstract];
         }
 
+        $parameters = $this->through($parameters);
+
         array_unshift($parameters, $this);
 
         return call_user_func_array($this->binds[$abstract], $parameters);
+    }
+
+    public function through($parameters)
+    {
+        return $parameters = is_array($parameters) ? $parameters : func_get_args();
+        // return $this;
+    }
+}
+
+/**
+ * IOC服务容器 - 反射解决依赖
+ */
+class SuperContainer
+{
+    public $_instance=[];
+
+    /**
+     * 实现完成依赖自动注入
+     * @param \Closure|string|null $concrete
+     */
+    public function make($class)
+    {
+        $class = is_string($class) ? new \ReflectionClass($class) : $class;
+
+        $constructor = $class->getConstructor();
+
+        $parametersClasses = ! is_null($constructor) ? $constructor->getParameters() : [];
+
+        if (! $parametersClasses) return $class->newInstance();
+
+        foreach ($parametersClasses as $parametersClass) {
+            $params[] = $this->make($parametersClass->getClass());
+        }
+        return $class->newInstanceArgs($params);
+    }
+}
+
+class Me
+{
+    protected $something;
+
+    public function __construct(Something $something)
+    {
+        $this->something = $something;
+    }
+}
+interface Something
+{
+
+}
+class SomethingA implements Something
+{
+
+}
+class SomethingB implements Something
+{
+
+}
+class You{
+    public $something;
+    public function __constructor(SomethingA $something){
+        $this->something = $something;
     }
 }
