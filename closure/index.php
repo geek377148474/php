@@ -17,4 +17,7 @@ require 'common/function.php';
 // require 'closure/example5.php';
 
 # [usage 6]
-require 'closure/example6.php';
+// require 'closure/example6.php';
+
+# [usage 7]
+require 'closure/example7.php';

@@ -1,0 +1,12 @@
+{
+    "name": "ccjian_PHP",
+    "description": "PHP Knowledge",
+    "type": "Knowledge",
+    "keywords": [
+        "PHP", "PHP knowledge"
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "filp/whoops": "*"
+    }
+}
