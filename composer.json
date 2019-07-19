@@ -1,12 +1,22 @@
 {
-    "name": "ccjian_PHP",
+    "name": "ccjian/PHP",
     "description": "PHP Knowledge",
     "type": "Knowledge",
     "keywords": [
-        "PHP", "PHP knowledge"
+        "PHP",
+        "PHP knowledge"
     ],
     "require": {
         "php": ">=5.3.0",
-        "filp/whoops": "*"
+        "filp/whoops": "*",
+        "symfony/var-dumper": "*",
+        "catfan/medoo": "*",
+        "twig/twig": "*"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
     }
 }
