@@ -66,11 +66,10 @@ class SuperContainer
     public function make($class)
     {
         $class = is_string($class) ? new \ReflectionClass($class) : $class;
-
         $constructor = $class->getConstructor();
-
+        
         $parametersClasses = ! is_null($constructor) ? $constructor->getParameters() : [];
-
+        
         if (! $parametersClasses) return $class->newInstance();
 
         foreach ($parametersClasses as $parametersClass) {
@@ -95,7 +94,11 @@ interface Something
 }
 class SomethingA implements Something
 {
-
+    public $something;
+    public function __construct(SomethingB $something)
+    {
+        $this->something = $something;
+    }
 }
 class SomethingB implements Something
 {
@@ -103,7 +106,7 @@ class SomethingB implements Something
 }
 class You{
     public $something;
-    public function __constructor(SomethingA $something){
+    public function __construct(SomethingA $something){
         $this->something = $something;
     }
 }

@@ -26,4 +26,7 @@ require 'Container.php';
  * [IOC 服务容器 利用反射实现自动搜寻依赖]
  */
 $sc = new SuperContainer();
-$sc->make(You::class);
+$you = $sc->make(You::class);
+var_dump($you);
+
+  
