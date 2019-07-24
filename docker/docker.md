@@ -135,10 +135,16 @@
 - 设置挂载目录
 
   `VOLUME ["<路径1>", "<路径2>"...]`
+  
+- 使用 as 来为某一阶段命名
+
+  `From <image> as <name>`
+
+- 设置构建时可用参数
+
+  `ARG  <键=值>`
 
 ###### 
-
-
 
 
 
@@ -245,8 +251,23 @@
 
   `docker cp [OPTIONS] SRC_PATH CONTAINER:DEST_PATH`
 
-  
+###### docker容器网络
 
+- 列出网络
+
+  `docker network ls`
+
+- 创建桥接网络
+
+  `docker network create <networkName>`
+
+- 删除网络
+
+  `docker network rm <networkID>`
+
+- 清除没有用户的网络
+
+  `docker network prune`
 
 
 
