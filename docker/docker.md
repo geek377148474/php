@@ -144,8 +144,6 @@
 
   `ARG  <键=值>`
 
-###### 
-
 
 
 
@@ -273,11 +271,62 @@
 
 
 
+#### docker-compose
 
+---
 
+##### 范例
 
+```dockerfile
+	\# docker-compose up -d --build
+version: '3'
+services:	
+  nginx: 
+  	# build:
+  	#   context: ./nginx
+    #   dockerfile: Dockerfile
+    image: nginx:alpine
+    volumes:
+    	- ./:/usr/share/nginx/html/
+    ports: 
+    	- 8080:80
+    expose：
+    	- 80
+```
 
+- 声明版本使用version
 
+- 声明服务用services
+
+  `services：`
+
+  ​	 `<子项1>... `
+
+  ​	 `<子项2>... `
+
+- 声明一个容器服务
+
+  `services` 的子项
+
+- 指定Dockerfile文件的路径
+
+  `build: /path/to/build/dir`
+
+- 声明基础层
+
+  `images`
+
+- 声明匿名卷
+
+  `volume`
+
+- 声明端口映射
+
+  `ports`
+
+- 暴露端口
+
+  `expose`
 
 
 

@@ -1,0 +1,12 @@
+# docker-compose up -d --build
+version: '3'
+services:
+  nginx: 
+    # build:
+    #   context: ./nginx
+    #   dockerfile: Dockerfile
+    image: nginx:alpine
+    volumes:
+      - ./:/usr/share/nginx/html/
+    ports: 
+      - 8080:80
