@@ -3,3 +3,5 @@
 .vscode
 .idea/*
 .vscode/*
+./docker/mytravis/mysql/data/*
+./docker/mytravis/nginx/log/nginx

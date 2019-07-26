@@ -1,12 +1,56 @@
-# docker-compose up -d --build
-version: '3'
+# docker-compose -f ./docker-compose.yml up -d --build
+version: '2'
 services:
-  nginx: 
+
+  lnmp_nginx: 
     # build:
     #   context: ./nginx
     #   dockerfile: Dockerfile
+    #   args:
+    #      buildno: 1
     image: nginx:alpine
-    volumes:
-      - ./:/usr/share/nginx/html/
+    container_name: lnmp_nginx
     ports: 
       - 8080:80
+    expose: 
+      - 80
+    volumes:
+      - ./:/usr/share/nginx/html/
+      - ./nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf:rw
+    restart: always
+    networks: 
+      - lnmp
+    # depends_on:
+    #   - lnmp_redis
+    
+  lnmp_php:
+    image: php:7.3-fpm-alpine
+    container_name: laravel
+    ports: 
+      - 9002:9000/tcp
+    expose: 
+      - 9000
+    networks: 
+      - lnmp
+    volumes: 
+      - ./laravel:/app/laravel
+    environment:
+      - PHP_VERSION=7.3
+    # env_file:
+    #   - ./common.env
+    restart: always
+
+  # lnmp_redis:
+  #   image: redis:alpine
+  #   environment: 
+  #     - REDIS_NAME=redis
+  #     - REDIS_PASSWORD=123456
+
+networks:
+  lnmp:
+    driver: bridge
+    # alias: 
+    #   - alias1
+    #   - alias2
+    # ipv4_address:
+    # ipv6_address:

@@ -1,0 +1,111 @@
+version: '3'
+services: 
+######################## php73
+  php73: 
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        ALPINE_REPOSITORIES: ${ALPINE_REPOSITORIES}
+        MORE_EXTENSION_INSTALLER: php73.sh
+        PHP_EXTENSIONS: ${PHP73_EXTENSIONS}
+        PHP_VERSION: ${PHP73_VERSION}
+        SWOOLE_VERSION: swoole-${PHP73_SWOOLE_VERSION}
+    container_name: php73
+    volumes:
+      # SOURCE_DIR
+      - ${SOURCE_DIR}:/var/www/html/:rw
+      # php.ini
+      - ${PHP73_PHP_CONF_FILE}:/usr/local/etc/php/php.ini:ro
+      # www.conf
+      - ${PHP73_WWW_CONF_FILE}:/usr/local/etc/php-fpm.d/www.conf:rw
+      # php-fpm.conf
+      - ${PHP73_FPM_CONF_FILE}:/usr/local/etc/php-fpm.conf:rw
+      # log
+      - ${PHP73_LOG_DIR}:/var/log/php
+    restart: always
+    # 特权模式
+    # cap_add:
+    #   - SYS_PTRACE
+    expose: 
+      - 9000
+    ports: 
+      - ${PHP73_HOST_PORT}:9000
+    networks:
+      - lnmp
+####################### nginx
+  nginx:
+    image: nginx:${NGINX_VERSION}
+    ports:
+      - "${NGINX_HTTP_HOST_PORT}:80"
+      - "${NGINX_HTTPS_HOST_PORT}:443"
+    container_name: nginx
+    volumes:
+      # SOURCE_DIR
+      - ${SOURCE_DIR}:/var/www/html/:rw
+      # conf.d
+      - ${NGINX_CONFD_DIR}:/etc/nginx/conf.d/:rw
+      # nginx.conf
+      - ${NGINX_CONF_FILE}:/etc/nginx/nginx.conf:ro
+      # log
+      - ${NGINX_LOG_DIR}:/var/log/nginx/:rw
+    restart: always
+    networks:
+      - lnmp
+######################## mysql
+# docker run -it --rm -d -e MYSQL_ROOT_PASSWORD=123456 mysql:${MYSQL_VERSION}
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    ports:
+      - "${MYSQL_HOST_PORT}:3306"
+    container_name: mysql
+    volumes:
+    # mysql.cnf
+      # - ${MYSQL_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf:ro
+    # var
+      - ${MYSQL_DATA_DIR}:/var/lib/mysql/:rw
+    restart: always
+    networks:
+      - lnmp
+    environment:
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+######################## redis
+  redis:
+    image: redis:${REDIS_VERSION}
+    ports:
+      - "${REDIS_HOST_PORT}:6379"
+    container_name: redis
+    volumes:
+      - ${REDIS_CONF_FILE}:/etc/redis.conf:ro
+    restart: always
+    entrypoint: ["redis-server", "/etc/redis.conf"]
+    networks:
+      - lnmp
+######################## phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - "${PHPMYADMIN_HOST_PORT}:80"
+    container_name: phpmyadmin
+    networks:
+      - lnmp
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+######################## phpredisadmin
+  phpredisadmin:
+    image: erikdubbelboer/phpredisadmin:latest
+    ports:
+      - "${REDISMYADMIN_HOST_PORT}:80"
+    container_name: phpredisadmin
+    networks:
+      - lnmp
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+
+
+####################### networks
+networks: 
+  lnmp:
+    driver: bridge

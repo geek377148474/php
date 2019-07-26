@@ -1,3 +1,4 @@
+# docker-compose config
 # docker-compose -up
 version: '3'  # 指定版本号
 services:     # 开始编写服务
@@ -7,6 +8,5 @@ services:     # 开始编写服务
       dockerfile: Dockerfile  # 指定Dockerfile文件名
       args:                   # 设定构建参数
         PATH: /app/www
-      # cache_from: # 指定构建镜像的缓存
-      #   - alpine:latest
-      #   - corp/web_app:3.14
+    environment:
+        ALPINE_VERSION: ${ALPINE_VERSION}

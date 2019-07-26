@@ -1,7 +1,5 @@
 ## docker实操系列
 
-
-
 #### 操作镜像
 
 ---
@@ -71,6 +69,9 @@
 - 删除失效依赖
 
   `docker image prune`
+  
+- 删除所有镜像
+  `docker rmi $(docker images -q)`
 
 ###### 构建
 
@@ -240,6 +241,10 @@
 - 删除所有处于终止状态的容器
 
   `docker container prune`
+  
+- 删除所有容器
+
+  `docker rm -f $(docker ps -aq)`
 
 ###### 改进
 
@@ -275,23 +280,63 @@
 
 ---
 
-##### 范例
+##### docker-compose YAML
 
 ```dockerfile
-	\# docker-compose up -d --build
-version: '3'
-services:	
-  nginx: 
-  	# build:
-  	#   context: ./nginx
+# docker-compose -f ./docker-compose.yml up -d --build
+version: '2'
+services:
+
+  lnmp_nginx: 
+    # build:
+    #   context: ./nginx
     #   dockerfile: Dockerfile
+    #   args:
+    #      buildno: 1
     image: nginx:alpine
-    volumes:
-    	- ./:/usr/share/nginx/html/
+    container_name: lnmp_nginx
     ports: 
-    	- 8080:80
-    expose：
-    	- 80
+      - 8080:80
+    expose: 
+      - 80
+    volumes:
+      - ./:/usr/share/nginx/html/
+      - ./nginx/laravel.conf:/etc/nginx/conf.d/laravel.conf:rw
+    networks: 
+      - lnmp
+    depends_on:
+      - redis
+    
+  lnmp_php:
+    image: php:7.3-fpm-alpine
+    container_name: laravel
+    ports: 
+      - 9002:9000/tcp
+    expose: 
+      - 9000
+    networks: 
+      - lnmp
+    volumes: 
+      - ./laravel:/app/laravel
+    environment:
+      - PHP_VERSION=7.3
+    # env_file:
+    #   - ./common.env
+
+  lnmp_redis:
+    image: redis:alpine
+    environment: 
+      - REDIS_NAME=redis
+      - REDIS_PASSWORD=123456
+
+networks:
+  lnmp:
+    driver: bridge
+    alias: 
+      - alias1
+      - alias2
+    # ipv4_address:
+    # ipv6_address:
 ```
 
 - 声明版本使用version
@@ -330,6 +375,109 @@ services:
 
 
 
+##### docker-compose
+
+- 创建并启动服务
+
+  `docker-compose up <服务1> <服务2> ... `
+
+- 创建并启动所有服务并以daemon守护形式
+
+  `docker-compose up -d`
+
+- 构建或重构服务
+
+  `docker-compose build`或`docker-compose build <服务1> <服务2> ...`
+
+- 构建或重构并启动服务
+
+  `docker-compose up -d --build`
+
+- 进入命令行容器
+
+  `docker-compose exec <服务> </bin/bash or /bin/sh>`
+
+- 停止并删除容器，网络，图像和挂载卷
+
+  `docker-compose down`
+
+- 停止并删除全部
+
+  `docker-compose down <服务1> <服务2> ...`
+
+- 停止单个正在运行的容器
+
+  `docker-compose stop <serviceName>`
+
+- 删除停止的容器
+
+  `docker-compose rm <serviceName>`
+
+- 运行某个服务
+
+  `docker-compose run [serviceName]`
+
+- 在一个服务上执行一个命令
+
+  `docker-compose run <serviceName> <command>`
+
+- 强制停止容器并删除
+
+  `docker-compose kill`
+
+- 输出运行的容器列表。
+
+  `docker-compose ps`
+
+- 查看服务的输出。
+
+  `docker-compose logs `
+
+- 查看某个服务的输出
+
+  `docker-compose logs -ft <serviceName>`
+
+- 查看命令的帮助
+
+  `docker-compose help`
+
+- 查看配置信息
+
+  `docker-compose config`
+
+
+
+
+
+## 编写自动化部署环境
+
+### 基础
+
+##### docker alpine为PHP安装扩展
+
+- docker-php-ext-install 安装
+
+`docker-php-ext-install bcmath dba exif mysqli pdo_mysql sysvsem sysvshm`
+
+- docker-php-ext-enable 开启
+
+  `docker-php-ext-enable <swoole or other extensionName>`
+
+- docker-php-ext-configure 设置
+
+  `docker-php-ext-configure <gd --with-freetype-dir=/usr/include/ or such as ...>`
+
+- ext中没有使用pecl install
+
+  `pecl install <amqp or yaf or such as ...>`
+
+### 结构
+
+mytravis
+
+|----- extensions
+
+|-----
 
 
 
@@ -337,6 +485,23 @@ services:
 
 
 
+
+
+##### 镜像源
+
+- 查看镜像源
+
+  ` cat /etc/docker/daemon.json`
+
+- 修改镜像源并重启docker服务
+
+```json
+{
+	"registry-mirrors": ["https://4iyv54ex.mirror.aliyuncs.com"]
+}
+```
+
+`service docker restart`
 
 
 

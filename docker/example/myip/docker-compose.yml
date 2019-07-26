@@ -1,0 +1,16 @@
+version: '2'
+services:
+  myip:
+    # image: nginx:alpine
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: test_myip
+
+    # run: apk add --update curl
+    # entrypoint: 
+    #   - echo
+    #   - 1
+      # - curl
+      # - -s
+      # - https://ip.cn
