@@ -2,6 +2,7 @@
 .idea
 .vscode
 .idea/*
+.env
 .vscode/*
-./docker/mytravis/mysql/data/*
-./docker/mytravis/nginx/log/nginx
+docker/mytravis/mysql/data/*
+docker/mytravis/nginx/log/nginx
