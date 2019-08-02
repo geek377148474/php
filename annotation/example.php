@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * 注解可根据业务解耦
+ * 
+ * 提取、使用
+ */
+/**
  * @Annotation
  * @Target("CLASS")
  * @funcName 注解内容1
@@ -13,6 +18,10 @@ class A
     public $a = 1;
 }
 
+
+/**
+ * 该方法可以扩展，调用之并续写，如使用$all=true后，使用isset查询某个$annotation是否存在，或将各种annotion提取使用
+ */
 function explainDocument($class, $annotionName, $all = false)
 {
     $class = $class instanceof ReflectionClass ? $class : new \ReflectionClass($class);
@@ -28,6 +37,7 @@ function explainDocument($class, $annotionName, $all = false)
 
     return $annotions;
 }
+
 
 // 注解的解析
 dd(explainDocument(A::class, 'Annotation', 'Target', 'funcname', 'method'));

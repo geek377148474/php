@@ -37,6 +37,11 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             'Medoo\\' => 6,
         ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -71,6 +76,14 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
         ),
     );
 

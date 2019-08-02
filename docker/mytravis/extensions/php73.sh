@@ -11,22 +11,21 @@ echo "============================================"
 echo
 
 
-# 实际上此处所有 EXTENSIONS 都会安装 因为EXTENSIONS为空
-
 if [ -z "${EXTENSIONS##*,mcrypt,*}" ]; then
     echo "---------- mcrypt was REMOVED from PHP 7.2.0 ----------"
 fi
-
 
 if [ -z "${EXTENSIONS##*,mysql,*}" ]; then
     echo "---------- mysql was REMOVED from PHP 7.0.0 ----------"
 fi
 
-
 if [ -z "${EXTENSIONS##*,sodium,*}" ]; then
     echo "---------- Install sodium ----------"
     echo "Sodium is bundled with PHP from PHP 7.2.0 "
 fi
+
+
+
 
 if [ -z "${SWOOLE_VERSION##*swoole-4.3*}" ]; then
     echo "---------- Install swoole-4.3 ----------"
@@ -44,7 +43,7 @@ if [ -z "${SWOOLE_VERSION##*swoole-4.4*}" ]; then
     && docker-php-ext-enable swoole
 fi
 
-if [ -z "${EXTENSIONS##*redis*}" ]; then
+if [ -z "${EXTENSIONS##*,redis,*}" ]; then
     echo "---------- Install redis ----------"
     mkdir redis \
     && tar -xf redis-4.1.1.tgz -C redis --strip-components=1 \
@@ -88,7 +87,6 @@ if [ -z "${EXTENSIONS##*,xdebug,*}" ]; then
     && ( cd xdebug && phpize && ./configure && make ${MC} && make install ) \
     && docker-php-ext-enable xdebug
 fi
-
 
 if [ -z "${EXTENSIONS##*,tideways,*}" ]; then
     echo "---------- Install tideways ----------"

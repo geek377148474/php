@@ -18,6 +18,7 @@ ARG SWOOLE_VERSION
 # 更多的扩展
 ARG MORE_EXTENSION_INSTALLER
 
+ENV EXTENSIONS=",${PHP_EXTENSIONS},"
 ENV MC="-j$(nproc)"
 
 COPY  extensions /tmp/extensions

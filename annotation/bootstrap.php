@@ -26,4 +26,15 @@
  * 读取注解的内容，需要使用反射技术
  */
 
-require 'example.php';
+// require 'example.php';
+
+// require 'testOne.php';
+
+// require 'testTwo.php';
+
+
+// require 'parse.php';
+
+$log = file_get_contents(WORK_DIR.'/phptrace/log.txt');
+preg_match('@.*<.*@', $log, $matches);
+dump($matches);

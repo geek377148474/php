@@ -26,7 +26,7 @@ echo
 echo "============================================="
 echo "2. Install dependencies"
 echo "============================================="
-if [ "${PHP_EXTENSIONS}" != "" ]; then
+if [ "${EXTENSIONS}" != "" ]; then
     echo "---------- Install general dependencies ----------"
     apk add --no-cache autoconf g++ libtool make curl-dev libxml2-dev linux-headers
 fi
@@ -35,16 +35,17 @@ echo
 echo "============================================="
 echo "3. Install extenxion start"
 echo "============================================="
-echo "installing: ${PHP_EXTENSIONS}"
+echo "installing: ${EXTENSIONS}"
 
-if [ -z "${PHP_EXTENSIONS##*amqp*}" ]; then
+# amqp因网络容易失败 失败后rebuild
+if [ -z "${EXTENSIONS##*,amqp,*}" ]; then
     echo "---------- Install amqp ----------"
     apk add --no-cache rabbitmq-c-dev
     pecl install amqp
     docker-php-ext-enable amqp
 fi
 
-if [ -z "${PHP_EXTENSIONS##*pdo_mysql*}" ]; then
+if [ -z "${EXTENSIONS##*,pdo_mysql,*}" ]; then
     echo "---------- Install pdo_mysql ----------"
     docker-php-ext-install ${MC} pdo_mysql
 fi

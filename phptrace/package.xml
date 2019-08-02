@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<package version="2.0" xmlns="http://pear.php.net/dtd/package-2.0"
+    xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+  <name>trace</name>
+  <channel>pecl.php.net</channel>
+  <summary>Trace is a low-overhead tracing tool for PHP</summary>
+  <description>
+    Trace is a low-overhead tracing tool for PHP.
+    It can trace all PHP executing, function calls, request information during
+    run-time. And provides features like Filter, Statistics, Current Status and
+    so on.
+    It is very useful to locate blocking, heavy-load problems and debug in all
+    environments, especially in production environments.
+  </description>
+  <lead>
+    <name>Yuchen Wang</name>
+    <user>monque</user>
+    <email>phobosw@gmail.com</email>
+    <active>yes</active>
+  </lead>
+  <lead>
+    <name>Anan Zhao</name>
+    <user>flabby</user>
+    <email>flabbyan@gmail.com</email>
+    <active>no</active>
+  </lead>
+  <lead>
+    <name>Bing Bai</name>
+    <user>silkcut</user>
+    <email>silkcutbeta@gmail.com</email>
+    <active>yes</active>
+  </lead>
+  <date>2017-03-14</date>
+  <version>
+    <release>1.0.1beta</release>
+    <api>1.0.1beta</api>
+  </version>
+  <stability>
+    <release>beta</release>
+    <api>beta</api>
+  </stability>
+  <license uri="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2.0</license>
+
+  <notes>
+- Add support for PHP 7.1
+- Fix problem with arguments passed by-reference #77
+- Fix some unit tests
+  </notes>
+
+  <contents>
+    <dir name="/">
+      <dir name="common">
+        <file role="src" name="trace_color.h"/>
+        <file role="src" name="trace_comm.c"/>
+        <file role="src" name="trace_comm.h"/>
+        <file role="src" name="trace_ctrl.c"/>
+        <file role="src" name="trace_ctrl.h"/>
+        <file role="src" name="trace_filter.c"/>
+        <file role="src" name="trace_filter.h"/>
+        <file role="src" name="trace_mmap.c"/>
+        <file role="src" name="trace_mmap.h"/>
+        <file role="src" name="trace_time.h"/>
+        <file role="src" name="trace_type.c"/>
+        <file role="src" name="trace_type.h"/>
+        <file role="src" name="trace_version.h"/>
+      </dir> <!-- common -->
+      <dir name="deps">
+        <dir name="sds">
+          <file role="doc" name="LICENSE"/>
+          <file role="src" name="Makefile"/>
+          <file role="doc" name="README.md"/>
+          <file role="src" name="sds.c"/>
+          <file role="src" name="sds.h"/>
+          <file role="src" name="testhelp.h"/>
+        </dir> <!-- sds -->
+      </dir> <!-- deps -->
+      <dir name="extension">
+        <dir name="tests">
+            <file role="test" name="pcntl_001.phpt"/>
+            <file role="test" name="pcntl_002.phpt"/>
+            <file role="test" name="refargs.phpt"/>
+            <file role="test" name="skipif.inc"/>
+            <file role="test" name="special_func_001.phpt"/>
+            <file role="test" name="special_func_002.phpt"/>
+            <file role="test" name="trace_001.phpt"/>
+            <file role="test" name="trace_002_include.inc"/>
+            <file role="test" name="trace_002.phpt"/>
+            <file role="test" name="trace_002_require.inc"/>
+            <file role="test" name="trace_003.phpt"/>
+            <file role="test" name="trace_004.phpt"/>
+            <file role="test" name="trace_006_include.inc"/>
+            <file role="test" name="trace_006.phpt"/>
+            <file role="test" name="trace_007.phpt"/>
+            <file role="test" name="trace_008.phpt"/>
+            <file role="test" name="trace_009.phpt"/>
+            <file role="test" name="trace_010.phpt"/>
+            <file role="test" name="trace_011.phpt"/>
+            <file role="test" name="trace_012.phpt"/>
+            <file role="test" name="trace_013.phpt"/>
+            <file role="test" name="trace_014.phpt"/>
+            <file role="test" name="trace_015.phpt"/>
+            <file role="test" name="trace_015.sh"/>
+            <file role="test" name="trace_016.phpt"/>
+            <file role="test" name="trace_016.sh"/>
+        </dir> <!-- tests -->
+        <file role="src" name="Makefile.frag"/>
+        <file role="src" name="config.m4"/>
+        <file role="src" name="php_trace.h"/>
+        <file role="src" name="trace.c"/>
+      </dir> <!-- extension -->
+      <dir name="src">
+        <file role="src" name="cli.c"/>
+        <file role="src" name="cli.h"/>
+        <file role="src" name="ptrace.c"/>
+        <file role="src" name="ptrace.h"/>
+        <file role="src" name="status.c"/>
+        <file role="src" name="status.h"/>
+        <file role="src" name="trace.c"/>
+        <file role="src" name="trace.h"/>
+      </dir> <!-- src -->
+      <file role="doc" name="CHANGES.md"/>
+      <file role="doc" name="CHANGES_ZH.md"/>
+      <file role="php" name="example.php"/>
+      <file role="doc" name="LICENSE"/>
+      <file role="doc" name="README.md"/>
+      <file role="doc" name="README_ZH.md"/>
+    </dir> <!-- / -->
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.2</min>
+      </php>
+      <pearinstaller>
+        <min>1.4.0</min>
+      </pearinstaller>
+    </required>
+  </dependencies>
+  <providesextension>trace</providesextension>
+  <extsrcrelease/>
+  <changelog></changelog>
+</package>

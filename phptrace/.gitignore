@@ -1,0 +1,72 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Cli
+src/phptrace
+
+# Extension
+extension/.deps
+extension/.libs
+extension/Makefile
+extension/Makefile.fragments
+extension/Makefile.global
+extension/Makefile.objects
+extension/acinclude.m4
+extension/aclocal.m4
+extension/autom4te.cache
+extension/build
+extension/deps
+extension/common
+extension/confdefs.h
+extension/config.cache
+extension/config.guess
+extension/config.h
+extension/config.h.in
+extension/config.log
+extension/config.nice
+extension/config.status
+extension/config.sub
+extension/configure
+extension/configure.in
+extension/conftest*
+extension/install-sh
+extension/libtool
+extension/ltmain.sh
+extension/missing
+extension/mkinstalldirs
+extension/modules
+extension/run-tests*.php
+extension/tests/*.diff
+extension/tests/*.exp
+extension/tests/*.log
+extension/tests/*.out
+extension/tests/*.php
+extension/tests/*.sh
+extension/tmp-php.ini
