@@ -4,6 +4,12 @@
  * 入口文件
  */
 
+if ($argc>0) {
+    if ($argv[1] === '-t'){
+        define('TRACE', true);
+    }
+}
+
 !defined('DEBUG') && define('DEBUG', true);
 !defined('TRACE') && define('TRACE', false);
 !defined('WORK_DIR') && define('WORK_DIR', __DIR__);
@@ -60,6 +66,7 @@ if (TRACE) {
     }else{
         echo 'please install phptrace';
     }
+    exit;
 }
 ###########################################
 

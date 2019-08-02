@@ -35,6 +35,47 @@
 
 // require 'parse.php';
 
+# 实现能往数组任意一层push一个value
+function runInDepth(&$arr, $end, $value, $key=false, $depth=0) {
+    if (!is_array($arr)) {
+
+        return $end;
+        throw new \Exception('该数组的维度是'.$depth);
+        return false;
+    }
+    if ($end===0) {
+        if (!$key) {
+            $arr[] = $value;
+        }else{
+            $arr[$key] = $value;
+        }
+        return $arr;
+    }
+    $end -= $depth===0 ? 1 : 0;
+    $depth++;
+    $tmp = end($arr);
+    $tmpkey = array_search($tmp, $arr);
+    $end--;
+    $arr[$tmpkey] = runInDepth($tmp, $end, $value, $key, $depth);
+    return $arr;
+}
+
+$arr = [
+    ['a'],
+    ['b'],
+    [
+        'c'=>[1,2,3],
+    ],
+];
+$arr = runInDepth($arr, 1, 'd',4);
+dump($arr);
+die;
 $log = file_get_contents(WORK_DIR.'/phptrace/log.txt');
-preg_match('@.*<.*@', $log, $matches);
-dump($matches);
+$log = preg_replace('@\[pid.*?\]@','', $log);
+preg_match_all('@.*\s>\s.*@', $log, $matches);
+$logArr=[];
+foreach($matches[0] as $v){
+    preg_match_all('@\s{4}@', $v, $match);
+    $count = count($match[0]);
+
+}
