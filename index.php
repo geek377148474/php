@@ -4,8 +4,8 @@
  * 入口文件
  */
 
-if ($argc>0) {
-    if ($argv[1] === '-t'){
+if ($argc > 0) {
+    if ($argv[1] === '-t') {
         define('TRACE', true);
     }
 }
@@ -45,8 +45,8 @@ if (TRACE) {
     preg_match('@Thread Safety.*@', $content, $matches);
     $disabledPos = strpos($matches[0], 'disabled');
     $threadSafeFlag = $disabledPos !== false ? 'NTS' : 'ZTS';
-    echo 'PHP '.phpversion().' ('.$threadSafeFlag.')'.PHP_EOL;
-    if (phpversion('trace') !== false){
+    echo 'PHP ' . phpversion() . ' (' . $threadSafeFlag . ')' . PHP_EOL;
+    if (phpversion('trace') !== false) {
         $pid = getmypid();
         echo "**phptrace sample**\n";
         echo "Type these command in a new console:\n";
@@ -63,10 +63,10 @@ if (TRACE) {
         fgets($fp);
         fclose($fp);
         usleep(100000);
-    }else{
-        echo 'please install phptrace';
+    } else {
+        echo 'please install phptrace' . PHP_EOL;
+        exit;
     }
-    exit;
 }
 ###########################################
 

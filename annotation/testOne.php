@@ -8,10 +8,10 @@ use Doctrine\Common\Annotations\AnnotationReader;
 
 // 内容
 /**
- * @Undocumented class
+ * @Undocumented
  * @fsdf
  */
-class Foo
+ class Foo
 {
     /**
      * @MyAnnotation(myProperty="value")
@@ -38,7 +38,16 @@ $myAnnotation = $reader->getPropertyAnnotation(
     $property,
     MyAnnotation::class
 );
-dump($myAnnotation);
+// dump($myAnnotation);
+
+/*
+@annotation 各个类职责
+AnnotationReader
+[A reader for docblock annotations.]
+
+
+ */
+
 /*
 @核心方法
 $this->Annotation()

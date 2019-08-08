@@ -162,9 +162,10 @@ class ParseClass
         $this->_propertie = $propertie;
     }
 }
-$obj = new ReflectionClass(DocLexer::class);
+
+$obj = new ReflectionClass(DocParser::class);
 $parse = new ParseClass($obj);
-$parse->getPropertiesDoc();
-// dump($parse->getPropertiesDoc());
-// dump($parse->getMethodsDoc());
+// $parse->getPropertiesDoc();
+dump($parse->getPropertiesDoc());
+dump($parse->getMethodsDoc());
 

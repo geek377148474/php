@@ -14,6 +14,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
     );
 
     public static $prefixLengthsPsr4 = array (
+        'a' => 
+        array (
+            'annotation\\' => 11,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -45,6 +49,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
     );
 
     public static $prefixDirsPsr4 = array (
+        'annotation\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/annotation',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',

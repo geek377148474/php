@@ -6,6 +6,11 @@
         "PHP",
         "PHP knowledge"
     ],
+    "autoload": {
+        "psr-4": {
+            "annotation\\": "annotation"
+        }
+    },
     "require": {
         "php": ">=5.6.0",
         "filp/whoops": "*",

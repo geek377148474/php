@@ -375,7 +375,7 @@ final class DocParser
 
             $pos++;
         }
-
+        
         return null;
     }
 
@@ -494,7 +494,7 @@ final class DocParser
             AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Attribute.php');
             AnnotationRegistry::registerFile(__DIR__ . '/Annotation/Attributes.php');
         }
-
+        
         $class      = new \ReflectionClass($name);
         $docComment = $class->getDocComment();
 
@@ -513,7 +513,7 @@ final class DocParser
         // verify that the class is really meant to be an annotation
         if ($metadata['is_annotation']) {
             self::$metadataParser->setTarget(Target::TARGET_CLASS);
-
+            
             foreach (self::$metadataParser->parse($docComment, 'class @' . $name) as $annotation) {
                 if ($annotation instanceof Target) {
                     $metadata['targets']         = $annotation->targets;
@@ -546,7 +546,7 @@ final class DocParser
                     $attribute->type     = (false !== strpos($propertyComment, '@var') && preg_match('/@var\s+([^\s]+)/',$propertyComment, $matches))
                         ? $matches[1]
                         : 'mixed';
-
+                    
                     $this->collectAttributeTypeMetadata($metadata, $attribute);
 
                     // checks if the property has @Enum
@@ -572,7 +572,7 @@ final class DocParser
                 $metadata['default_property'] = reset($metadata['properties']);
             }
         }
-
+        
         self::$annotationMetadata[$name] = $metadata;
     }
 
@@ -647,7 +647,7 @@ final class DocParser
                 $this->lexer->moveNext();
                 continue;
             }
-
+            
             // make sure the @ is followed by either a namespace separator, or
             // an identifier token
             if ((null === $peek = $this->lexer->glimpse())
@@ -662,6 +662,7 @@ final class DocParser
                 $annotations[] = $annot;
             }
         }
+        
         return $annotations;
     }
 
@@ -1088,7 +1089,7 @@ final class DocParser
         $item = new \stdClass();
         $item->name  = $fieldName;
         $item->value = $this->PlainValue();
-
+        
         return $item;
     }
 
