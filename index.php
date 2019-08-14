@@ -10,14 +10,19 @@ if ($argc > 0) {
     }
 }
 
+date_default_timezone_set('Asia/Shanghai');
+
 !defined('DEBUG') && define('DEBUG', true);
 !defined('TRACE') && define('TRACE', false);
-!defined('WORK_DIR') && define('WORK_DIR', __DIR__);
+!defined('APP_DIR') && define('APP_DIR', __DIR__);
 
 require 'vendor/autoload.php';
 
 if (DEBUG) {
-    ini_set('display_error', 'On');
+    ini_set('display_errors', 'On');
+    ini_set('display_startup_errors', 'On');
+    error_reporting(E_ALL);
+
     $whoops = new \Whoops\Run;
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
     $whoops->register();
@@ -25,9 +30,13 @@ if (DEBUG) {
     ini_set('display_errors', 'Off');
 }
 
-$dir = 'annotation'; // 工作目录
+// TODO : 获取工作目录列表
+
+$dir = 'phpmanual'; // 工作目录
+$dir = 'myfunction'; // 工作目录
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
+    defined('WORK_DIR') || define('WORK_DIR', __DIR__.DIRECTORY_SEPARATOR.$dir);
 }
 
 #########################################
@@ -60,7 +69,7 @@ if (TRACE) {
         echo "\n";
         printf("Press enter to continue...\n");
         $fp = fopen('php://stdin', 'r');
-        fgets($fp);
+        $buffers = fgets($fp);
         fclose($fp);
         usleep(100000);
     } else {

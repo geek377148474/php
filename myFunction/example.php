@@ -17,3 +17,8 @@ function getArgsAsArray($abstracts, $tags)
 $args = getArgsAsArray('test', 'arg1', 'arg2', 'arg3');
 
 dump($args);
+
+function mydump($data){
+    return sprintf('<pre>%s</pre>', print_r($data, true));
+}
+
