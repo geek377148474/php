@@ -17,7 +17,8 @@
         "symfony/var-dumper": "*",
         "catfan/medoo": "*",
         "twig/twig": "*",
-        "doctrine/annotations": "v1.6.1"
+        "doctrine/annotations": "v1.6.1",
+        "symfony/validator": "^4.3"
     },
     "repositories": {
         "packagist": {

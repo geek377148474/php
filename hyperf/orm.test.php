@@ -1,11 +1,33 @@
 <?php
 
+
 $query = \App\Models\Commerce\Order::query();
 
 // @$getSql Closure
-$getSql = function($query){
-    return vsprintf(str_replace('?', '%s', $query->toSql()), $query->getBindings());
-};
+// $query->where();
+// $getSql = function($query){
+//     return vsprintf(str_replace('?', '%s', $query->toSql()), $query->getBindings());
+// };
+
+// $getSql = function($query){
+//     $query = $query[0];
+//     return vsprintf(str_replace('?', '%s', $query['query']), $query['bindings']);
+// };
+// Db::connection()->enableQueryLog(); // 开启查询日志
+// $count = $query->count();
+// $queries = Db::getQueryLog(); // 获取查询日志
+// print_r($count);
+// print_r($getSql($queries)); // 即可查看执行的sql，传入的参数等等
+// die;
+
+
+// @sum && @raw
+// Product::where('status',1)->first(
+//     array(
+//         \DB::raw('SUM(profit) as profit'),
+//         \DB::raw('SUM(order_count) as order_count')
+//     )
+// )->toArray();
 
 // @find
 // $rst = $query->find(1)->toArray();
@@ -87,6 +109,20 @@ $getSql = function($query){
 //             ->get()
 //             ->toArray();
 //         print_r($rst);
+
+// @first
+// $query = \Hyperf\DbConnection\DB::table('commerce_order');
+// $rst = $query->whereIn('id', [1,5])
+//     ->select('id','order_no')
+//     ->first()
+//     ->toArray();
+// print_r($rst); //array
+// $query = \App\Models\Commerce\Order::query();
+// $rst = $query->whereIn('id', [1,5])
+//     ->select('id','order_no')
+//     ->first()
+//     ->toArray();
+// print_r($rst); //object
 
 // @ pluck
 

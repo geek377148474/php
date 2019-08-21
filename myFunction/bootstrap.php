@@ -1,12 +1,13 @@
 <?php
 
+
 /**
  * 返回 获取$dir目录下所有文件 的array
  */
 function getDirFiles($dir, $exclude=[]){
     $exclude = ! is_array($exclude) ? array_slice(func_get_args(),1) : $exclude;
     // 获取某目录下所有文件、目录名（不包括子目录下文件、目录名）  
-    $handler = opendir($dir);  
+    $handler = opendir($dir);
     while (($filename = readdir($handler)) !== false) 
     {
         // 务必使用!==，防止目录下出现类似文件名“0”等情况  
@@ -37,6 +38,9 @@ if (DIRECTORY_SEPARATOR !== $_SERVER['REQUEST_URI'] && $file = str_replace(DIREC
     require WORK_DIR . $file;
 else{
     $files = getDirFiles(__DIR__, 'bootstrap.php');
+    if (empty($files)) {
+        throw new \Exception('no files in '.WORK_DIR);
+    }
     print fileToHerf($files, $prefix);
 }
 // echo sprintf('<pre>%s</pre>', print_r($data, true));

@@ -31,9 +31,8 @@ if (DEBUG) {
 }
 
 // TODO : 获取工作目录列表
+$dir = 'hook'; 
 
-$dir = 'phpmanual'; // 工作目录
-$dir = 'myfunction'; // 工作目录
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
     defined('WORK_DIR') || define('WORK_DIR', __DIR__.DIRECTORY_SEPARATOR.$dir);
