@@ -31,7 +31,7 @@ if (DEBUG) {
 }
 
 // TODO : 获取工作目录列表
-$dir = 'hook'; 
+$dir = 'trigger'; 
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
@@ -77,5 +77,5 @@ if (TRACE) {
     }
 }
 ###########################################
-
+require 'common'.DIRECTORY_SEPARATOR.'function.php';
 require 'bootstrap.php';

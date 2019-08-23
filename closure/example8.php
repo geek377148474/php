@@ -6,7 +6,7 @@
  */
 $chooseDump = function($condition, $data='dump your data here'){
     if ($condition) {
-        var_dump($data);
+        \Doctrine\Common\Util\Debug::dump($data, 3);
         die;
     }
 };

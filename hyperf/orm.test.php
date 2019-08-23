@@ -133,4 +133,39 @@ $query = \App\Models\Commerce\Order::query();
 // $fields = ['id','order_no'];
 // $rst = $query->where($map)->get($fields)->toArray();
 
+
+############
+# [insert] #
+############
+// @insert
+// $parent_id = 0;
+// $name = 2;
+// $type = 2;
+// $code = 2;
+// $baidu_lng = 2;
+// $baidu_lat = 2;
+// $rst = Db::table('common_region')->insert(compact('parent_id','name','type','code','baidu_lng','baidu_lat'));
+
+// $row = new \StdClass;
+// $row->type = 0;
+// $row->first_weight = self::DEFAULT_FIRST_WEIGHT;
+// $row->first_amount = self::DEFAULT_FIRST_AMOUNT;
+// $row->step_weight = self::DEFAULT_STEP_WEIGHT;
+// $row->step_amount = self::DEFAULT_STEP_AMOUNT;
+// $row->free_amount = self::DEFAULT_FREE_AMOUNT;
+// $row->fee = self::DEFAULT_FEE;
+// $freightTable->insert((array)$row);
+
+
+
+
+
+
+
+
+
+
+
+
+
 print_r($rst);

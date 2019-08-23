@@ -9,7 +9,10 @@
     "autoload": {
         "psr-4": {
             "annotation\\": "annotation"
-        }
+        },
+        "files": [
+            "common/function.php"
+        ]
     },
     "require": {
         "php": ">=5.6.0",
@@ -18,7 +21,8 @@
         "catfan/medoo": "*",
         "twig/twig": "*",
         "doctrine/annotations": "v1.6.1",
-        "symfony/validator": "^4.3"
+        "symfony/validator": "^4.3",
+        "doctrine/common": "^2.10"
     },
     "repositories": {
         "packagist": {

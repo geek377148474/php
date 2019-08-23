@@ -26,7 +26,7 @@ function fileToHerf(array $file, $prefix)
     if (empty($file)) return [];
     $herf = '';
     foreach ($file ?? [] as $key => $value) {
-        $herf .= sprintf('<li><a href="%s/%s">%s. %s</a></li>', $prefix, $value, $key, $value);
+        $herf .= vsprintf('<li><a href="%s/%s">%s. %s</a></li>', [$prefix, $value, $key, $value]);
     }
     return $herf;
 }
