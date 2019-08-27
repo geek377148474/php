@@ -35,6 +35,20 @@ class MysqlPoolPdo extends AbstractPool
     }
 }
 
+/**
+代码调用过程详解：
+1、server启动时，调用init()方法初始化最少数量(min指定)的连接对象，放进类型为channelle的connections对象中。
+    在init中循环调用中，依赖了createObject()返回连接对象，而createObject()
+    中是调用了本来实现的抽象方法，初始化返回一个PDO db连接。所以此时，连接池connections中有min个对象。
+
+2、server监听用户请求，当接收发请求时，调用连接数的getConnection()方法从connections通道中pop()一个对象。
+    此时如果并发了10个请求，server因为配置了1个worker,所以再pop到一个对象返回时，遇到sleep()的查询，
+    因为用的连接对象是pdo的查询，此时的woker进程只能等待，完成后才能进入下一个请求。
+    因此，池中的其余连接其实是多余的，同步客户端的请求速度只能和woker的数量有关。
+
+3、查询结束后，调用free()方法把连接对象放回connections池中
+ */
+
 $httpServer = new swoole_http_server('0.0.0.0', 9501);
 $httpServer->set(
     ['worker_num' => 1]
