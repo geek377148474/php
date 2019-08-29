@@ -1,5 +1,5 @@
 <?php
-echo phpinfo();
+
 $prefix = 'index.php';
 
 $uri = rtrim($_SERVER['REQUEST_URI'], DIRECTORY_SEPARATOR);

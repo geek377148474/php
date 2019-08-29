@@ -32,6 +32,7 @@ if (DEBUG) {
 
 // TODO : 获取工作目录列表
 $dir = 'coroutine';
+// $dir = 'phpmanual';
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
