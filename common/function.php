@@ -24,7 +24,7 @@ if (! function_exists('getDirFiles')) {
             if ($filename == "." || $filename == ".." || in_array($filename, $exclude)) continue;
 
             if(is_file($dir.DIRECTORY_SEPARATOR.$filename)) {
-                $files[] = $filename;
+                $files[] = str_replace(WORK_DIR.DIRECTORY_SEPARATOR, '', $dir.DIRECTORY_SEPARATOR.$filename);
             }else{
                 $files = array_merge($files ?? [], getDirFiles($dir.DIRECTORY_SEPARATOR.$filename));
             }
@@ -43,7 +43,7 @@ if (! function_exists('fileToHerf')) {
         if (empty($file)) return [];
         $herf = '';
         foreach ($file ?? [] as $key => $value) {
-            $herf .= sprintf('<li><a href="%s/%s">%s. %s</a></li>', $prefix, $value, $key, $value);
+            $herf .= sprintf('<li><a href="%s'.DIRECTORY_SEPARATOR.'%s">%s. %s</a></li>', $prefix, $value, $key, $value);
         }
         return $herf;
     }

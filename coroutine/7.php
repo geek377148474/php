@@ -41,6 +41,7 @@ class Resource
 $context = new Co\Context();
 assert($context instanceof ArrayObject);
 assert(Co::getContext() === null);
+
 func(function () {
     $context = Co::getContext();
     assert($context instanceof Co\Context);
@@ -53,4 +54,25 @@ func(function () {
         Co::getContext()->resource5 = new Resource;
     });
 });
+
 Co::resume(2);
+
+/*
+协程退出后上下文自动清理 (如无其它协程或全局变量引用)
+无defer注册和调用的开销 (无需注册清理方法, 无需调用函数清理)
+无PHP数组实现的上下文的哈希计算开销 (在协程数量巨大时有一定好处)
+Co\Context使用ArrayObject, 满足各种存储需求 (既是对象, 也可以以数组方式操作)
+*/
+
+// Resource#1 constructed
+// Resource#2 constructed
+// Resource#3 constructed
+// Coroutine#1 exit
+// Resource#2 destructed
+// Resource#1 destructed
+// Resource#4 constructed
+// Resource#5 constructed
+// Coroutine#2 exit
+// Resource#5 destructed
+// Resource#3 destructed
+// Resource#4 destructed
