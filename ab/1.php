@@ -2,6 +2,10 @@
 /**
  * ab -c500 -n100000 -k http://127.0.0.1:9501/
  */
+/**
+ * 服务器性能参数
+ * 2G4核
+ */
 /*
 This is ApacheBench, Version 2.3 <$Revision: 1430300 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
