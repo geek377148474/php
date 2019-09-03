@@ -1,0 +1,42 @@
+<?php
+/*
+vmware磁盘扩容
+先实现卷扩容
+后实现文件系统扩容
+
+1.列出磁盘信息 据此得知新建分区将是sda3
+fdisk -l
+
+2.使用fdisk /dev/sda进入菜单项，m：列出菜单，p：列出分区表，n：增加分区，w：保存并退出
+fdisk /dev/sda
+
+3.reboot 重开机
+
+4.df -h #挂载前的分区情况
+
+5.以ext3形式格式化sda3
+mkfs.ext3 /dev/sda3
+
+6.挂载分区
+cd /
+mkdir /cm               # 准备一个文件目录用于挂载
+mount /dev/sda3 /cm     # 挂载分区到   /cm
+df -h                   # 挂载后分区情况
+
+7.修改vi /etc/fstab  分区表文件， 设置开机自动加载
+vi /etc/fstab
+/dev/sda3   /cm     ext3    defaults    0   0
+
+8.将这个分区的容量分一部分到根目录所在的磁盘
+添加新LVM到已有的LVM组，实现扩容
+lvm　　　　　　　　　　　　　　　　　　                # 进入lvm管理
+lvm>pvcreate /dev/sda3　　　　　　　　　             # 这是初始化刚才的分区，必须的
+lvm>vgextend centos /dev/sda3              　　　   # 将初始化过的分区加入到虚拟卷组vg_dc01
+lvm>lvextend -L +29.9G /dev/mapper/centos-root　　  # 扩展已有卷的容量（29.9G这个数字在后面解释）
+lvm>pvdisplay　　　　　　　　　　　　　　             # 查看卷容量，这时你会看到一个很大的卷了
+lvm>quit　　　　　　　　　　　　　　　　　             # 退出
+                                                    # +29.9G 空间不能全被LVM用 lvextend试探29.9G, 29.8G ... 直到不报错
+
+9.xfs_growfs /dev/mapper/centos-root        # 执行调整
+
+10.df -h
