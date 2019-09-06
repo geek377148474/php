@@ -22,7 +22,10 @@
         "twig/twig": "*",
         "doctrine/annotations": "v1.6.1",
         "symfony/validator": "^4.3",
-        "doctrine/common": "^2.10"
+        "doctrine/common": "^2.10",
+        "grpc/grpc": "^1.22",
+        "google/protobuf": "^3.9",
+        "symfony/finder": "^4.3"
     },
     "repositories": {
         "packagist": {
