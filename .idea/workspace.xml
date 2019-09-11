@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21427de3-7381-4192-a531-c7b080d32a80" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/www.php.com.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/www.php.com.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyperf/travis/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Hyperf/travis/1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyperf/try/orm.test.php" beforeDir="false" afterPath="$PROJECT_DIR$/Hyperf/try/orm.test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyperf/try/zend.db.test.php" beforeDir="false" afterPath="$PROJECT_DIR$/Hyperf/try/zend.db.test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Php-validate/1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Php-validate/1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +20,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Php-validate/1.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="19" />
+                <state relative-caret-position="378">
+                  <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Php-validate/2.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -108,7 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/coroutine/example8.php" />
         <option value="$PROJECT_DIR$/coroutine/example9.php" />
         <option value="$PROJECT_DIR$/coroutine/example10.php" />
         <option value="$PROJECT_DIR$/coroutine/example11.php" />
@@ -159,6 +157,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Php-validate/bootstrap.php" />
         <option value="$PROJECT_DIR$/Php-validate/1.php" />
+        <option value="$PROJECT_DIR$/Php-validate/2.php" />
       </list>
     </option>
   </component>
@@ -191,7 +190,7 @@
       <path value="$PROJECT_DIR$/vendor/inhere/php-validate" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="130" />
     <option name="width" value="1740" />
     <option name="height" value="1039" />
@@ -313,12 +312,12 @@
       <workItem from="1568181134182" duration="1109000" />
       <workItem from="1568183323790" duration="359000" />
       <workItem from="1568197228578" duration="966000" />
-      <workItem from="1568199383215" duration="1786000" />
+      <workItem from="1568199383215" duration="2767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116735000" />
+    <option name="totallyTimeSpent" value="117716000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,13 +362,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/coroutine/client/1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/closure/9.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -714,8 +706,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Php-validate/1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="378">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Php-validate/2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="26" lean-forward="true" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
         </state>
       </provider>
     </entry>
