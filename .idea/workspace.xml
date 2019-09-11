@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21427de3-7381-4192-a531-c7b080d32a80" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyperf/orm.test.php" beforeDir="false" afterPath="$PROJECT_DIR$/hyperf/try/orm.test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hyperf/zend.db.test.php" beforeDir="false" afterPath="$PROJECT_DIR$/hyperf/try/zend.db.test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev2.prove" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hyperf/travis/1.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
-              <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="63" />
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/git/1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -41,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="756">
               <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
@@ -74,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/coroutine/example5.php" />
         <option value="$PROJECT_DIR$/coroutine/example6.php" />
         <option value="$PROJECT_DIR$/phpmanual/bootstrap.php" />
         <option value="$PROJECT_DIR$/phpmanual/spl_object_hash.php" />
@@ -125,6 +131,7 @@
         <option value="$PROJECT_DIR$/SplPriorityQueue/5.php" />
         <option value="$PROJECT_DIR$/SplPriorityQueue/bootstrap.php" />
         <option value="$PROJECT_DIR$/hyperf/travis/1.php" />
+        <option value="$PROJECT_DIR$/git/1.php" />
       </list>
     </option>
   </component>
@@ -155,7 +162,7 @@
       <path value="$PROJECT_DIR$/vendor/google/protobuf" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="145" />
     <option name="y" value="1" />
     <option name="width" value="1740" />
@@ -169,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,18 +186,13 @@
             <path>
               <item name="www.php.com" type="b2602c69:ProjectViewProjectNode" />
               <item name="www.php.com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyperf" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="www.php.com" type="b2602c69:ProjectViewProjectNode" />
-              <item name="www.php.com" type="462c0819:PsiDirectoryNode" />
-              <item name="hyperf" type="462c0819:PsiDirectoryNode" />
-              <item name="travis" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,11 +281,12 @@
       <workItem from="1568084493209" duration="3000" />
       <workItem from="1568102332713" duration="2000" />
       <workItem from="1568181134182" duration="1109000" />
+      <workItem from="1568183323790" duration="359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113515000" />
+    <option name="totallyTimeSpent" value="113874000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -296,9 +298,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="1" width="1740" height="1039" extended-state="1" />
+    <frame x="145" y="1" width="1740" height="1039" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.15783204" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.15961882" />
       <window_info id="Structure" order="1" sideWeight="0.5010846" side_tool="true" weight="0.19509594" />
       <window_info id="Favorites" order="2" sideWeight="0.5010846" side_tool="true" weight="0.19509594" />
       <window_info id="DB Browser" order="3" />
@@ -328,9 +331,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/coroutine/10.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/coroutine/9.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -636,13 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SplPriorityQueue/1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -667,17 +660,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hyperf/travis/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="75" column="21" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="756">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hyperf/travis/1.php">
+    <entry file="file://$PROJECT_DIR$/git/1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="63" />
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
         </state>
       </provider>
     </entry>
