@@ -25,7 +25,8 @@
         "doctrine/common": "^2.10",
         "grpc/grpc": "^1.22",
         "google/protobuf": "^3.9",
-        "symfony/finder": "^4.3"
+        "symfony/finder": "^4.3",
+        "monolog/monolog": "^2.0"
     },
     "repositories": {
         "packagist": {

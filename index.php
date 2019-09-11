@@ -34,7 +34,8 @@ if (DEBUG) {
 // $dir = 'coroutine';
 // $dir = 'phpmanual';
 // $dir = 'rpc';
-$dir = 'SplPriorityQueue';
+// $dir = 'SplPriorityQueue';
+$dir = 'Monolog';
 
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
