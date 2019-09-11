@@ -134,6 +134,10 @@ $query = \App\Models\Commerce\Order::query();
 // $rst = $query->where($map)->get($fields)->toArray();
 
 
+## @instanceof
+# if model get == Hyperf\Database\Model\Collection
+# if Db::table get == \Hyperf\Utils\Collection
+
 ############
 # [insert] #
 ############
