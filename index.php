@@ -35,8 +35,8 @@ if (DEBUG) {
 // $dir = 'phpmanual';
 // $dir = 'rpc';
 // $dir = 'SplPriorityQueue';
-$dir = 'Monolog';
-
+// $dir = 'Monolog';
+$dir = 'Php-validate';
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);

@@ -46,6 +46,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
             'Monolog\\' => 8,
             'Medoo\\' => 6,
         ),
+        'I' => 
+        array (
+            'Inhere\\Validate\\' => 16,
+        ),
         'G' => 
         array (
             'Grpc\\' => 5,
@@ -115,6 +119,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+        'Inhere\\Validate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inhere/php-validate/src',
         ),
         'Grpc\\' => 
         array (
