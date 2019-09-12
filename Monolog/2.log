@@ -1,0 +1,6 @@
+2019 9 12, 10:09 am||%channel||WARNING||Foo||[]||[]
+2019 9 12, 10:09 am||%channel||ERROR||a new user||{"username":"daydaygo"}||[]
+2019 9 12, 10:09 am||%channel||ALERT||message||["context0","context1"]||{"memory_peak_usage":"2 MB","hello":"world"}
+2019 9 12, 10:10 am||%channel||WARNING||Foo||[]||[]
+2019 9 12, 10:10 am||%channel||ERROR||a new user||{"username":"daydaygo"}||[]
+2019 9 12, 10:10 am||%channel||ALERT||message||{"0":"context0","context1":"context1"}||{"memory_peak_usage":"2 MB","hello":"world"}

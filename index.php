@@ -30,13 +30,8 @@ if (DEBUG) {
     ini_set('display_errors', 'Off');
 }
 
-// TODO : 获取工作目录列表
-// $dir = 'coroutine';
-// $dir = 'phpmanual';
-// $dir = 'rpc';
-// $dir = 'SplPriorityQueue';
-// $dir = 'Monolog';
-$dir = 'Php-validate';
+// TODO
+$dir = 'Monolog';
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);
