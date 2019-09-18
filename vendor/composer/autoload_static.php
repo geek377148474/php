@@ -35,6 +35,7 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Validator\\' => 28,
+            'Symfony\\Component\\Finder\\' => 25,
         ),
         'P' => 
         array (
@@ -42,7 +43,18 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         ),
         'M' => 
         array (
+            'Monolog\\' => 8,
             'Medoo\\' => 6,
+        ),
+        'I' => 
+        array (
+            'Inhere\\Validate\\' => 16,
+        ),
+        'G' => 
+        array (
+            'Grpc\\' => 5,
+            'Google\\Protobuf\\' => 16,
+            'GPBMetadata\\Google\\Protobuf\\' => 28,
         ),
         'D' => 
         array (
@@ -92,13 +104,37 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             0 => __DIR__ . '/..' . '/symfony/validator',
         ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
         'Medoo\\' => 
         array (
             0 => __DIR__ . '/..' . '/catfan/medoo/src',
+        ),
+        'Inhere\\Validate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inhere/php-validate/src',
+        ),
+        'Grpc\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grpc/grpc/src/lib',
+        ),
+        'Google\\Protobuf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/protobuf/src/Google/Protobuf',
+        ),
+        'GPBMetadata\\Google\\Protobuf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/google/protobuf/src/GPBMetadata/Google/Protobuf',
         ),
         'Doctrine\\Common\\Lexer\\' => 
         array (

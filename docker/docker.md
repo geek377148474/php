@@ -226,7 +226,7 @@
 
 - 伪终端形式进入容器
 
-  `docker exec -it [container ID] [/usr/bash or /usr/sh]`
+  `docker exec -it [container ID] [/bin/bash or /bin/sh]`
 
 ###### 删除
 

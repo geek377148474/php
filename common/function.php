@@ -57,15 +57,22 @@ if (! function_exists('pp')) {
     }
 }
 
-if (! function_exists('chooseDump')) {
-    /**
-     * 可设置多个循环 或多次调用的 程序中 选定条件 $condition 终止
-     * 当然 $condition 可以是表达式 也可以是 调用的闭包(该闭包需要被调用并返回用于判断)
-     */
-    function chooseDump($condition, $data='dump your data here'){
+if (! function_exists('chooseDump') && ! function_exists('cd')) {
+    function chooseDump($condition, $data){
         if ($condition) {
             \Doctrine\Common\Util\Debug::dump($data, 3);
             die;
         }
     };
+    function cd($condition, $data='dumping'){
+        $data = func_num_args() ===2 ? $data : array_slice(func_get_args(),1);
+        chooseDump($condition, $data);
+    }
+}
+
+if (! function_exists('printLn')) {
+    function printLn(...$args){
+        print_r(...$args);
+        echo PHP_EOL;
+    }
 }
