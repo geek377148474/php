@@ -30,6 +30,7 @@ if (! function_exists('getDirFiles')) {
             }
         }
         closedir($handler);
+        sort($files, SORT_NATURAL);
         return $files ?? [];
     }
 }

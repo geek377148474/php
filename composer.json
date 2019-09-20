@@ -1,5 +1,5 @@
 {
-    "name": "ccjian/PHP",
+    "name": "ccjian/php",
     "description": "PHP Knowledge",
     "type": "Knowledge",
     "keywords": [
@@ -27,7 +27,11 @@
         "google/protobuf": "^3.9",
         "symfony/finder": "^4.3",
         "monolog/monolog": "^2.0",
-        "inhere/php-validate": "^2.7"
+        "inhere/php-validate": "^2.7",
+        "doctrine/cache": "^1.8",
+        "doctrine/coding-standard": "^6.0",
+        "doctrine/collections": "^1.6",
+        "doctrine/dbal": "^2.9"
     },
     "repositories": {
         "packagist": {

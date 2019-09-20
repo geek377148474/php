@@ -31,7 +31,7 @@ if (DEBUG) {
 }
 
 // TODO
-$dir = 'Monolog';
+$dir = 'Doctrine';
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);

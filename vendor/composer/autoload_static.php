@@ -36,10 +36,12 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Validator\\' => 28,
             'Symfony\\Component\\Finder\\' => 25,
+            'SlevomatCodingStandard\\' => 23,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'PHPStan\\PhpDocParser\\' => 21,
         ),
         'M' => 
         array (
@@ -58,12 +60,15 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         ),
         'D' => 
         array (
+            'Doctrine\\Sniffs\\' => 16,
+            'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
+            'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 55,
         ),
     );
 
@@ -108,9 +113,17 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
         ),
+        'SlevomatCodingStandard\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slevomat/coding-standard/SlevomatCodingStandard',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
         ),
         'Monolog\\' => 
         array (
@@ -135,6 +148,14 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'GPBMetadata\\Google\\Protobuf\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/protobuf/src/GPBMetadata/Google/Protobuf',
+        ),
+        'Doctrine\\Sniffs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/coding-standard/lib/Doctrine/Sniffs',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/lib/Doctrine/DBAL',
         ),
         'Doctrine\\Common\\Lexer\\' => 
         array (
@@ -162,6 +183,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
             3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
+        ),
+        'Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dealerdirect/phpcodesniffer-composer-installer/src',
         ),
     );
 
