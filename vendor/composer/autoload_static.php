@@ -8,6 +8,7 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
@@ -19,6 +20,11 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             'annotation\\' => 11,
         ),
+        'Z' => 
+        array (
+            'Zend\\EventManager\\' => 18,
+            'Zend\\Code\\' => 10,
+        ),
         'W' => 
         array (
             'Whoops\\' => 7,
@@ -29,18 +35,24 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\Validator\\' => 28,
+            'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Console\\' => 26,
             'SlevomatCodingStandard\\' => 23,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Container\\' => 14,
+            'PackageVersions\\' => 16,
             'PHPStan\\PhpDocParser\\' => 21,
         ),
         'M' => 
@@ -61,6 +73,9 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'D' => 
         array (
             'Doctrine\\Sniffs\\' => 16,
+            'Doctrine\\ORM\\' => 13,
+            'Doctrine\\Migrations\\' => 20,
+            'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
@@ -77,6 +92,14 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             0 => __DIR__ . '/../..' . '/annotation',
         ),
+        'Zend\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
+        ),
+        'Zend\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
         'Whoops\\' => 
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
@@ -84,6 +107,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Php73\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (
@@ -101,6 +128,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
@@ -109,9 +140,17 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         array (
             0 => __DIR__ . '/..' . '/symfony/validator',
         ),
+        'Symfony\\Component\\Stopwatch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/stopwatch',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
         ),
         'SlevomatCodingStandard\\' => 
         array (
@@ -120,6 +159,14 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
         'PHPStan\\PhpDocParser\\' => 
         array (
@@ -152,6 +199,18 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
         'Doctrine\\Sniffs\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/coding-standard/lib/Doctrine/Sniffs',
+        ),
+        'Doctrine\\ORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM',
+        ),
+        'Doctrine\\Migrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/Migrations',
+        ),
+        'Doctrine\\Instantiator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
         'Doctrine\\DBAL\\' => 
         array (
@@ -198,6 +257,17 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'P' => 
+        array (
+            'ProxyManager\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
+            ),
+        ),
+    );
+
+    public static $classMap = array (
+        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -206,6 +276,7 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
             $loader->prefixLengthsPsr4 = ComposerStaticInitdfa8da1089054f98a00899bc568ee706::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitdfa8da1089054f98a00899bc568ee706::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitdfa8da1089054f98a00899bc568ee706::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitdfa8da1089054f98a00899bc568ee706::$classMap;
 
         }, null, ClassLoader::class);
     }
