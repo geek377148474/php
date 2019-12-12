@@ -77,7 +77,7 @@ abstract class AbstractPool
     }
 
     /**
-     * 初始换最小数量连接池
+     * 初始化最小数量连接池
      * @return $this|null
      */
     public function init()
@@ -134,6 +134,7 @@ abstract class AbstractPool
             /*echo "开始检测回收空闲链接" . $this->connections->length() . PHP_EOL;*/
             if ($this->connections->length() < intval($this->max * 0.5)) {
                 echo "请求连接数还比较多，暂不回收空闲连接\n";
+                return;
             }#1
             while (true) {
                 if (!$this->connections->isEmpty()) {

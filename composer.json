@@ -38,12 +38,7 @@
         "doctrine/orm": "^2.6",
         "doctrine/migrations": "^2.1",
         "doctrine/persistence": "^1.1",
-        "ext-json": "^1.7"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
+        "ext-json": "^1.7",
+        "phpoffice/phpexcel": "^1.8"
     }
 }

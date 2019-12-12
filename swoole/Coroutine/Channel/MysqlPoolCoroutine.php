@@ -11,9 +11,9 @@ class MysqlPoolCoroutine extends AbstractPool
 {
     protected $dbConfig = array(
         'host' => '127.0.0.1',
-        'port' => 3306,
-        'user' => 'localuser',
-        'password' => '8212',
+        'port' => 3307,
+        'user' => 'root',
+        'password' => '123456',
         'database' => 'test',
         'charset' => 'utf8',
         'timeout' => 10, // 超时前返回 data|false
@@ -23,7 +23,7 @@ class MysqlPoolCoroutine extends AbstractPool
     public static function getInstance()
     {
         if (is_null(self::$instance)) {
-            self::$instance = new MysqlPoolCoroutine();
+            self::$instance = new self();
         }
         return self::$instance;
     }
