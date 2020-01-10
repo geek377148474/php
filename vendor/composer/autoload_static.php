@@ -16,6 +16,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
     );
 
     public static $prefixLengthsPsr4 = array (
+        'n' => 
+        array (
+            'nothing\\' => 8,
+        ),
         'a' => 
         array (
             'annotation\\' => 11,
@@ -88,6 +92,10 @@ class ComposerStaticInitdfa8da1089054f98a00899bc568ee706
     );
 
     public static $prefixDirsPsr4 = array (
+        'nothing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jian/package/nothing/src',
+        ),
         'annotation\\' => 
         array (
             0 => __DIR__ . '/../..' . '/annotation',

@@ -1,7 +1,7 @@
 <?php
 $mysql_conf = array(
-    'host'    => '127.0.0.1:3307',
-    'db'      => 'wp',
+    'host'    => '192.168.10.111:3307',
+    'db'      => 'liao',
     'db_user' => 'root',
     'db_pwd'  => '123456',
 );
@@ -14,7 +14,7 @@ $mysqli->query("set names 'utf8';");//编码转化
 $select_db = $mysqli->select_db($mysql_conf['db']);
 if (!$select_db) {
     die("could not connect to the db:\n" .  $mysqli->error);
-}$sql = "select uid from user where name = 'joshua';";
+}$sql = "select * from l_user limit 1";
 $res = $mysqli->query($sql);
 if (!$res) {
     die("sql error:\n" . $mysqli->error);

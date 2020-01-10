@@ -7,7 +7,10 @@ composer repo:ls
 composer repo:use
 
 
-git打标签
+git打标签提交release
 git tag -a v0.1.0 -m 'init code'
-git push origin --tags
+推送指定tag至远程仓库
+git push origin v0.1.0
+推送所有tags至远程仓库
+# git push origin --tags
 

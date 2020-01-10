@@ -37,10 +37,12 @@ final class Versions
   'doctrine/orm' => 'v2.6.3@434820973cadf2da2d66e7184be370084cc32ca8',
   'doctrine/persistence' => '1.1.1@3da7c9d125591ca83944f477e65ed3d7b4617c48',
   'doctrine/reflection' => 'v1.0.0@02538d3f95e88eb397a5f86274deb2c6175c2ab6',
+  'easyswoole/swoole-ide-helper' => '1.3.2@e759aeaa9bc89852a42c610d94ce4c65e6f5b8cf',
   'filp/whoops' => '2.4.1@6fb502c23885701a991b0bba974b1a8eb6673577',
   'google/protobuf' => 'v3.9.1@4bb1a332b47f618a0a21ad3cc9a43f1c4aaa5b62',
   'grpc/grpc' => '1.22.0@88235e786ef9b55fcb049f00c5c5202f8086a299',
   'inhere/php-validate' => 'v2.7.1@2426184320d07546951734dcfbd519472351656e',
+  'jian/package' => 'v0.1.0@0f8445c8da7294a14c453453dbcd0d730de6d4ca',
   'monolog/monolog' => '2.0.0@68545165e19249013afd1d6f7485aecff07a2d22',
   'ocramius/package-versions' => '1.5.1@1d32342b8c1eb27353c8887c366147b4c2da673c',
   'ocramius/proxy-manager' => '2.2.3@4d154742e31c35137d5374c998e8f86b54db2e2f',
@@ -64,7 +66,7 @@ final class Versions
   'twig/twig' => 'v2.11.3@699ed2342557c88789a15402de5eb834dedd6792',
   'zendframework/zend-code' => '3.3.2@936fa7ad4d53897ea3e3eb41b5b760828246a20b',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
-  'ccjian/php' => 'dev-master@f5db2457ca4607000b9e8608e680e3a95ede4793',
+  'ccjian/php' => 'dev-master@0089c9767a90494d61cbe7c3d89c44366f89e71a',
 );
 
     private function __construct()

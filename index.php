@@ -31,7 +31,7 @@ if (DEBUG) {
 }
 
 // TODO
-$dir = 'Doctrine';
+$dir = 'coroutine';
 
 if (!empty($dir) && dirname($_SERVER['SCRIPT_FILENAME']) != $dir) {
     chdir($dir);

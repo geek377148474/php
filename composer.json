@@ -39,6 +39,8 @@
         "doctrine/migrations": "^2.1",
         "doctrine/persistence": "^1.1",
         "ext-json": "^1.7",
-        "phpoffice/phpexcel": "^1.8"
+        "phpoffice/phpexcel": "^1.8",
+        "jian/package": "^0.1.0",
+        "easyswoole/swoole-ide-helper": "^1.3"
     }
 }

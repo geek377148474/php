@@ -1,0 +1,26 @@
+{
+    "name": "jian/package",
+    "license": "MIT",
+    "type": "php",
+    "keywords": ["php"],
+    "description": "This is my first package.",
+    "support":{
+        "issues":"https://github.com/geek377148474/package/issues",
+        "forum":"http://www.xiaosongit.com",
+        "source":"https://github.com/geek377148474/package"
+    },
+    "authors": [
+        {
+            "name": "ccjian",
+            "email": "377148474@qq.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload":{
+        "psr-4":{
+            "nothing\\":"nothing/src/"
+        }
+    }
+}
