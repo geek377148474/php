@@ -77,30 +77,37 @@ class MysqlPoolService
     {
         if ($this->pool->isEmpty()) {
             $mysql = $this->build();
+            $one = $this->setOne($mysql);
         }else{
-            $mysql = $this->pool->pop($this->timeout)['mysql'];
+            $one = $this->pool->pop($this->timeout);
         }
         if (!$this->isValid($mysql)) {
             $mysql = $this->createDb();
+            $one = $this->setOne($mysql);
         }
-        Coroutine::defer(function () use ($mysql) { //释放
-            $this->pool->push([
-                'mysql' => $mysql,
-                'last_used_time' => time()
-            ]);
+        Coroutine::defer(function () use ($one) { //释放
+            $this->pool->push($one);
         });
-        return $mysql;
+        return $one['mysql'];
+    }
+
+    protected function setOne($mysql){
+        return [
+            'last_used_time' => time(),
+            'mysql' => $mysql
+        ];
     }
 
     protected function build()
     {
         if ($this->count < $this->max) {
             $mysql = $this->createDb();
+            $one = $this->setOne($mysql);
             $this->count++;
         }else{
-            $mysql = $this->pool->pop($this->timeout)['mysql'];
+            $one = $this->pool->pop($this->timeout);
         }
-        return $mysql;
+        return $one;
     }
 
     protected function createDb(){
